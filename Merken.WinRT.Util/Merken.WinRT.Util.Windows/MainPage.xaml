@@ -1,0 +1,61 @@
+﻿<Page x:Class="Merken.WinRT.Util.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:Merken.WinRT.Util"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Button Grid.Row="0"
+                Click="Button_Click"
+                Content="Try it out!" />
+        <TextBlock Grid.Row="0" Text="Finished!" Visibility="Collapsed"/>
+        <StackPanel Grid.Row="0">
+            <TextBlock Text="All Finished!" Visibility="Collapsed"/>
+        </StackPanel>
+        <Hub Grid.Row="1" Header="My Hub">
+            <HubSection Header="Main section">
+                <DataTemplate>
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Stretch">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="350"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Row="0" TextWrapping="NoWrap" TextTrimming="WordEllipsis" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam velit ex, posuere non semper nec, molestie at tellus. Duis sit amet velit maximus elit vehicula convallis. Nunc pretium sem lectus, nec venenatis orci ullamcorper pretium. Ut sed lectus sit amet lectus tempor consequat. Mauris gravida interdum lorem, id consequat velit feugiat ac. Etiam eu tellus vel lacus lacinia lobortis ut vitae enim. Cras iaculis lobortis est. Nam et semper libero. In non nisl gravida, pellentesque nisl vitae, condimentum massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi molestie enim vitae scelerisque bibendum. Suspendisse a imperdiet ipsum. Sed lacinia metus sit amet mollis euismod. Duis sed efficitur justo." />
+                        <TextBlock Grid.Row="1" TextWrapping="Wrap" TextTrimming="WordEllipsis" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam velit ex, posuere non semper nec, molestie at tellus. Duis sit amet velit maximus elit vehicula convallis. Nunc pretium sem lectus, nec venenatis orci ullamcorper pretium. Ut sed lectus sit amet lectus tempor consequat. Mauris gravida interdum lorem, id consequat velit feugiat ac. Etiam eu tellus vel lacus lacinia lobortis ut vitae enim. Cras iaculis lobortis est. Nam et semper libero. In non nisl gravida, pellentesque nisl vitae, condimentum massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi molestie enim vitae scelerisque bibendum. Suspendisse a imperdiet ipsum. Sed lacinia metus sit amet mollis euismod. Duis sed efficitur justo." />
+                        <TextBlock Grid.Row="2" x:Name="SiblingTest" TextWrapping="WrapWholeWords" TextTrimming="WordEllipsis" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam velit ex, posuere non semper nec, molestie at tellus. Duis sit amet velit maximus elit vehicula convallis. Nunc pretium sem lectus, nec venenatis orci ullamcorper pretium. Ut sed lectus sit amet lectus tempor consequat. Mauris gravida interdum lorem, id consequat velit feugiat ac. Etiam eu tellus vel lacus lacinia lobortis ut vitae enim. Cras iaculis lobortis est. Nam et semper libero. In non nisl gravida, pellentesque nisl vitae, condimentum massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi molestie enim vitae scelerisque bibendum. Suspendisse a imperdiet ipsum. Sed lacinia metus sit amet mollis euismod. Duis sed efficitur justo." />
+                        <TextBlock Grid.Row="3" TextTrimming="Clip" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam velit ex, posuere non semper nec, molestie at tellus. Duis sit amet velit maximus elit vehicula convallis. Nunc pretium sem lectus, nec venenatis orci ullamcorper pretium. Ut sed lectus sit amet lectus tempor consequat. Mauris gravida interdum lorem, id consequat velit feugiat ac. Etiam eu tellus vel lacus lacinia lobortis ut vitae enim. Cras iaculis lobortis est. Nam et semper libero. In non nisl gravida, pellentesque nisl vitae, condimentum massa. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Morbi molestie enim vitae scelerisque bibendum. Suspendisse a imperdiet ipsum. Sed lacinia metus sit amet mollis euismod. Duis sed efficitur justo." />
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection Header="Second section">
+                <DataTemplate>
+                    <Image Source="ms-appx:///Images/tjardis.jpg" Stretch="UniformToFill" />
+                </DataTemplate>
+            </HubSection>
+
+            <HubSection x:Name="results" Header="Results section">
+                <DataTemplate>
+                    <Grid Background="White" HorizontalAlignment="Stretch">
+                        <TextBlock Height="500" Width="250" Foreground="Black" TextWrapping="WrapWholeWords"/>
+                        <Image Source="ms-appx:///Images/tjardis.jpg" Stretch="UniformToFill" Visibility="Collapsed" x:Name="hiddenImage"/>
+                    </Grid>
+                </DataTemplate>
+            </HubSection>
+        </Hub>
+
+        <Hub Grid.Row="1" Header="My Hub 2 invisible" Visibility="Collapsed">
+        </Hub>
+    </Grid>
+</Page>
